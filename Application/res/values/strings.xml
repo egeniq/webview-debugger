@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WebViewDebugger</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_go">GO</string>
+    <string name="homepage">http://portal.egeniq.com/wvd.json</string>
+    <string name="action_homepage">Homepage</string>
+
+</resources>
