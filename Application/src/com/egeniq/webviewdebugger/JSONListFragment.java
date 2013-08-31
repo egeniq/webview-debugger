@@ -36,7 +36,9 @@ public class JSONListFragment extends DialogFragment {
             for (Case c : _cases){
                 names.add(c.getName());
             }
-            list.setAdapter(new ArrayAdapter<String>(getActivity(), R.layout.json_list_row, names));
+            System.out.println(names.toString());
+            String[] array = names.toArray(new String[names.size()]);
+            list.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, array));
             list.setOnItemClickListener(new OnItemClickListener() {
 
                 @Override
@@ -44,10 +46,11 @@ public class JSONListFragment extends DialogFragment {
                     _webView.setVerticalScrollBarEnabled(_cases.get(position).getScrollState());
                     _webView.setHorizontalScrollBarEnabled(_cases.get(position).getScrollState());
                     _webView.loadUrl(_cases.get(position).getUrl());
+                    dismiss();
                 }
             });
         }
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return v;
     }
 
 }
